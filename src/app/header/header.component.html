@@ -1,0 +1,40 @@
+<header>
+  <a href="">
+    <img src="../../assets/mr chili logo.jpg" alt="Logo of Mr. Chili" class="logo">
+  </a>
+  <nav>
+    <ul>
+      <li><a href="">Főoldal</a></li>
+      <li><a href="/products">Termékek</a></li>
+      <li><a href="/about">Rólunk</a></li>
+      <li><a href="/contact">Kontakt</a></li>
+    </ul>
+  </nav>
+  <a href="">
+    Rendelés
+  </a>
+  <button>
+    <img src="../assets/shopping cart.svg" alt="Shopping cart icon">
+  </button>
+  <a href="">
+    <img src="../assets/tiktok.svg" alt="TikTok icon">
+  </a>
+  <button (click)="toggleMobileNav()">
+    <img src="../../assets/hamburger menu.svg" alt="Hamburger mobile menu con">
+  </button>
+  <aside [style.transform]="showMobileNav ? 'translateX(0%)' : 'translateX(100%)'">
+    <button (click)="toggleMobileNav()">
+      <img src="../../assets/close-icon.svg" alt="X close icon">
+    </button>
+    <nav>
+      <ul>
+        <li><a href="">Főoldal</a></li>
+        <li><a href="/products">Termékek</a></li>
+        <li><a href="/about">Rólunk</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        <li><a href="">Rendelés</a></li>
+      </ul>
+    </nav>
+    
+  </aside>
+</header>

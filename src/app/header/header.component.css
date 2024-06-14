@@ -4,8 +4,7 @@ header {
   background-color: #142030;
   position: fixed;
   display: flex;
-  position: absolute;
-  overflow-x: clip;
+  z-index: 100;
 }
 
 header > a:first-child {
@@ -103,10 +102,12 @@ header > a:nth-of-type(2) {
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
-  line-height: clamp(1.875rem, 1.29rem + 1.216vw, 2.1rem);
+  line-height: clamp(1.875rem, 1.29rem + 1.216vw, 2.2rem);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease-in-out
+  transition: all 0.3s ease-in-out;
+  font-family: "Bangers";
+  letter-spacing: 1.5px;
 }
 
 header > a:nth-of-type(2):hover {

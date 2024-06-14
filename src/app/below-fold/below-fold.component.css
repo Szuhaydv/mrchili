@@ -1,0 +1,177 @@
+.wave {
+  transform: translateY(1rem);
+}
+
+.products-section, .contact-section {
+  background-color: #273036;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-section {
+  height: 70vh;
+  padding-bottom: 1rem;
+  z-index: 11;
+}
+
+.contact-section {
+  height: 30vh;
+  transform: translateY(-1rem);
+  padding: 2rem 0;
+  z-index: 10;
+}
+
+.contact-options {
+  margin-top: auto;
+}
+
+.products-section > ul {
+  height: calc(100% - 3rem - clamp(3.063rem, 2.019rem + 2.172vw, 4.625rem));
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.products-section > ul > li {
+  width: 27.5%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 3px 11px 6px rgba(255,255,255, 0.42);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: clamp(0.5rem, -0.168rem + 1.39vw, 1.5rem);
+  border-radius: 1rem;
+}
+
+.products-section > ul > li:nth-child(1), .products-section > ul > li:nth-child(3) {
+  transform: scale(0.9);
+  filter: blur(2px);
+}
+
+.products-section > ul > li:nth-child(2) {
+  position: relative;
+}
+
+.products-section .image-container {
+  max-height: 50%;
+  width: 80%;
+  background: url('../../assets/black material.jpg');
+  border-radius: 1rem;
+  position: relative;
+  margin-bottom: 7.5%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translateY(-10%);
+}
+
+.image-container ul {
+  position: absolute;
+  width: 60%;
+  height: 2.5rem;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.image-container ul li {
+  width: 27.5%;
+  height: 100%;
+  padding: 4% 0;
+}
+
+.image-container ul li:nth-child(1) {
+  padding: 1% 0;
+}
+
+.products-section li {
+  font-family: "Bitter";
+}
+
+.products-section li h3 {
+  font: clamp(1.375rem, 0.79rem + 1.216vw, 2.25rem) "Bangers";
+  letter-spacing: 1px;
+}
+
+.products-section li p {
+  font-size: clamp(1rem, 0.833rem + 0.348vw, 1.25rem);
+  padding: 0 5%;
+  text-align: center;
+}
+
+.products-section li span {
+  font-size: clamp(1rem, 0.749rem + 0.521vw, 1.375rem)
+}
+
+.products-section li span b {
+  font-size: clamp(1.25rem, 0.999rem + 0.521vw, 1.625rem)
+}
+
+.products-section li button {
+  font: clamp(1.25rem, 0.999rem + 0.521vw, 1.625rem) "Alfa Slab One";
+  padding: 0.5rem 3rem;
+  background-color: #FD2A2A;
+  max-width: 80%;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.products-section li:nth-child(2) button:hover {
+  transform: scale(1.03);
+}
+
+.products-section h2, .contact-section h2 {
+  font: clamp(2.25rem, 1.498rem + 1.564vw, 3.375rem) "Alfa Slab One";
+  text-transform: uppercase;
+  color: white
+}
+
+.contact-section h2 {
+  transform: translateY(60%);
+}
+
+.contact-options {
+  transform: translateY(50%);
+}
+
+.contact-section h3 {
+  font: clamp(1.375rem, 0.79rem + 1.216vw, 2.25rem) "Alfa Slab One";
+  color: white;
+}
+
+.contact-section .email, .contact-section .phone {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.email {
+  margin-bottom: 0.5rem;
+}
+
+.wave-below {
+  transform: rotate(180deg) translateY(2rem);
+}

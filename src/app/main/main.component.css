@@ -1,23 +1,92 @@
 main {
   height: 100vh;
-  width: 100%;
-  max-width: 1280px;
+  width: 100vw;
   margin: 0 auto;
   padding-top: 80px;
-  background-color: lightcoral;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: clip;
+}
+
+app-below-fold {
+  display: flex;
+  flex-direction: column;
+}
+
+main > img {
+  position: absolute;
+  width: clamp(6rem, 3.328rem + 5.56vw, 10rem);
+  height: clamp(6rem, 3.328rem + 5.56vw, 10rem);
+  z-index: 1;
+}
+
+main > img:nth-child(1) {
+  right: clamp(65.813rem, 13.315rem + 65.571vw, 92rem);
+  top: calc(80px + 6vh);
+  transform: translate(50%, -50%);
+}
+
+main > img:nth-child(2) {
+  left: clamp(65.813rem, 13.315rem + 65.571vw, 92rem);
+  top: calc(80px + 6vh);
+  transform: scaleX(-1) translate(50%, -50%);
+}
+
+main > img:nth-child(3) {
+  right: clamp(65.813rem, 13.315rem + 65.571vw, 92rem);
+  top: calc(80px + 50vh);
+  transform: translate(33%, -100%);
+}
+
+main > img:nth-child(4) {
+  left: clamp(65.813rem, 13.315rem + 65.571vw, 92rem);
+  top: calc(80px + 50vh);
+  transform: translate(-33%, -100%);
+}
+
+main > img:nth-child(5), main > img:nth-child(6) {
+  width: clamp(12rem, 3.981rem + 10.016vw, 16rem);
+  height: clamp(12rem, 3.981rem + 10.016vw, 16rem);
+  bottom: 16%;
+  opacity: 0.2;
+}
+
+main > img:nth-child(5) {
+  right: clamp(78.5rem, 13.347rem + 81.377vw, 111rem);
+  transform: scaleX(-1) translateX(-100%);
+}
+
+main > img:nth-child(6) {
+  left: clamp(78.5rem, 13.347rem + 81.377vw, 111rem);
+  transform: translateX(-100%);
+}
+
+@media only screen and (max-width: 1280px) {
+  main > img:nth-child(1), main > img:nth-child(3) {
+    right: clamp(44.875rem, 13.366rem + 65.558vw, 65.813rem) !important;
+  }
+
+  main > img:nth-child(2), main > img:nth-child(4) {
+    left: clamp(44.875rem, 13.366rem + 65.558vw, 65.813rem) !important;
+  }
+
+  main > img:nth-child(5), main > img:nth-child(6) {
+    display: none
+  }
 }
 
 main .banner {
-  width: 100%;
-  max-width: 1000px;
-  height: 40vh;
+  width: clamp(41.75rem, 26.884rem + 30.93vw, 64rem);
+  height: 44vh;
   background-color: #FFFBE9;
-  border-radius: 12px;
-  margin-top: 10vh;
+  border-radius: 1rem;
+  margin-top: 6vh;
+  position: sticky;
+  z-index: 2;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .banner .banner-text {
@@ -25,46 +94,59 @@ main .banner {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
+  padding: 0 3%;
 }
 
 .banner h1 {
-  font: 81px "Alfa Slab One"
+  font: clamp(3.375rem, 2.248rem + 2.346vw, 5.063rem) "Alfa Slab One";
 }
 
 .banner h2 {
-  font: 54px "Bangers"
+  font: clamp(2.25rem, 1.498rem + 1.564vw, 3.375rem) "Bangers";
+  margin-left: 3rem;
 }
 
 .banner p {
-  padding: 0 10%;
+  font: clamp(1.25rem, 1.083rem + 0.348vw, 1.5rem) "Bitter";
 }
 
 .banner .banner-text button {
-  font: 32px "Alfa Slab One";
-  background: linear-gradient(#ff0202, #ff7c7c);
+  font: clamp(1.375rem, 0.957rem + 0.869vw, 2rem) "Alfa Slab One";
+  background: linear-gradient(to bottom, #ff0202, #ff7c7c);
   color: white;
   padding: 0.5rem 2rem;
   border-radius: 1rem;
   border: none;
+  margin-left: 3rem;
+  box-shadow: rgba(0,0,0, 0.45) 4px 4px 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
 
+.banner-text button:hover {
+  transform: scale(1.03) rotate(3deg);
+  box-shadow: rgba(0,0,0, 0.6) 8px 8px 12px !important;
 }
 
 .banner-carousel {
-  width: 40%;
+  width: 50%;
   height: 100%;
-  background-color: lightseagreen;
-  background-image: url('../assets/blob.svg');
-  background-repeat: no-repeat;
-  background-size: 80% 100% contain;
-  background-position: left;
   position: relative;
+  padding: 5%;
+}
+
+.banner-carousel .background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .banner-carousel .chevron-left, .banner-carousel .chevron-right {
-  height: 7vh;
-  width: 7vh;
+  height: clamp(3rem, 1.998rem + 2.085vw, 4.5rem);
+  width: clamp(3rem, 1.998rem + 2.085vw, 4.5rem);
   position: absolute;
   top: 50%;
   border-radius: 50%;
@@ -73,16 +155,27 @@ main .banner {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.2s ease-out
 }
 
 .banner-carousel .chevron-left {
-  left: 0%;
+  left: 16%;
   transform: translate(-10%, -50%);
 }
 
 .banner-carousel .chevron-right {
-  left: 80%;
+  left: 84%;
   transform: translate(-55%, -50%);
+}
+
+.chevron-left:hover {
+  transform: translate(-10%, -50%) scale(1.1) !important;
+}
+
+.chevron-right:hover {
+  transform: translate(-55%, -50%) scale(1.1) !important;
 }
 
 .chevron-left img, .chevron-right img {
@@ -92,28 +185,47 @@ main .banner {
 }
 
 .chevron-left img {
-  transform: translateX(-10%)
+  transform: translateX(-10%);
+  transition: all 0.3s;
 }
 
 .chevron-right img {
   transform: translateX(10%);
+  transition: all 0.3s;
+}
+
+.banner-carousel .product-img {
+  position: absolute;
+  left: 50%;
+  top: 36%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.banner-carousel h3 {
+  font: clamp(1.375rem, 0.957rem + 0.869vw, 2rem) "Bangers";
+  position: absolute;
+  right: 4%;
+  top: 80%;
 }
 
 .banner-carousel ul {
   list-style: none;
   position: absolute;
-  bottom: 2%;
-  height: 3rem;
-  display: flex;
+  bottom: 5%;
+  height: 1.5rem;
+  display: flex;  
   justify-content: center;
   gap: 1rem;
 }
 
 .banner-carousel ul li {
-  width: 3rem;
+  width: 1.5rem;
   background-color: white;
   border: 2px solid black;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
 }
 
 .banner-carousel ul li:last-child {
@@ -126,32 +238,31 @@ main .banner {
 }
 
 main ul {
-  height: 30vh;
-  margin-top: calc((20vh - 80px) / 2);
+  height: 32vh;
+  margin-top: calc((16vh - 80px) / 2);
   list-style: none;
   width: 100%;
   max-width: 1000px;
-  background-color: lightgoldenrodyellow;
   display: flex;
   justify-content: space-evenly;
 }
 
 main li {
   height: 100%;
-  background-color: lightsalmon;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 main .circle {
-  width: 10vw;
-  height: 10vw;
+  width: clamp(7.5rem, 4.995rem + 5.213vw, 11.25rem);
+  height: clamp(7.5rem, 4.995rem + 5.213vw, 11.25rem);
   max-width: 100%;
   border-radius: 50%;
   background: linear-gradient(#FFA500 0%, #FF6700 100%);
-  padding: 3.2rem;
+  padding: clamp(1rem, 0.332rem + 1.39vw, 2rem);
+  box-shadow: 4px 4px 4px rgba(0,0,0, 0.25);
 }
 
 .circle img {
@@ -161,11 +272,11 @@ main .circle {
 }
 
 main ul h2 {
-  font: 36px "Alfa Slab One";
+  font: clamp(1.5rem, 0.999rem + 1.043vw, 2.25rem) "Alfa Slab One";
   text-transform: uppercase;
 }
 
-main p {
-  font: 24px "Battamang";
+ul p {
   text-align: center;
+  font: clamp(1rem, 0.666rem + 0.695vw, 1.5rem) "Bitter";
 }

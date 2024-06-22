@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Bebas+Neue&display=swap');
+
+main {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 80px 128px 80px 128px;
+  font-family: 'Bitter';
+
+}
+
+.intro {
+  display: flex;
+  padding: 0 16px;
+}
+
+.intro div {
+  width: 55%;
+}
+
+.intro img {
+  width: 45%;
+  object-fit: contain;
+}
+
+h1 {
+  font: clamp(2.75rem, 2.332rem + 0.869vw, 3.375rem) 'Alfa Slab One';
+  text-transform: uppercase;
+}
+
+.intro > div > p {
+  font-size: clamp(1.125rem, 0.874rem + 0.521vw, 1.5rem);
+  line-height: 32px;
+}
+
+.filters {
+  width: 100%;
+  background-color: #D9DBDF;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+}
+
+.filters > ul {
+  width: 100%;
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  column-gap: 48px;
+  font: 24px 'Bebas Neue';
+}
+
+.filters > ul > li {
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0, 0.7);
+  padding: 4px 16px;
+  background-color: white;
+  box-shadow: 0 4px 4px rgba(0,0,0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: max-content;
+}
+
+.filters svg {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: all 0.3s ease-out;
+}
+
+.filters > ul .selected {
+  background: linear-gradient(to right, #DBF26E, #61FA74 37%, #1CFDD6 100%);
+}
+
+.products {
+  margin-top: 16px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filters > ul > li:first-child {
+  position: relative
+}
+
+.spice-levels {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  margin-top: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 4px rgba(0,0,0, 0.5);
+  list-style-type: none;
+  transition: all 0.4s ease-in;
+  cursor: default
+}
+
+.spice-levels li {
+  width: 100%;
+  padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.spice-levels li button {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  pointer-events: inherit;
+  background-image: url(../../assets/checkmark.svg);
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #2196F3;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.spice-levels li img {
+  height: 100%;
+  max-width: 24px;
+  object-fit: contain;
+  /* margin-right: 4px; */
+}
+
+.spice-levels img.colored {
+  max-width: 28px !important;
+  /* margin-right: 0px !important; */
+}
+
+.products-list {
+  width: 100%;
+  background-color: white;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  font: 36px 'Alfa Slab One';
+  text-transform: uppercase;
+  padding: 1rem 0 0 1.5rem;
+}
+
+.products-list ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.products-list section > ul > li {
+  max-width: 15rem;
+  max-height: 20rem;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  justify-self: flex-start !important;
+}
+
+.products-list section > ul > li:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.image-container {
+  width: 70%;
+  height: 60%;
+  background-color: #1CFDD6;
+  position: relative;
+  margin-top: 10%;
+  border-radius: 16px;
+  background-image: url(../../assets/black\ material.jpg);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+  object-fit: contain;
+}
+
+.spice-level-indicator {
+  position: absolute;
+  padding: 4px 8px;
+  border-radius: 8px;
+  height: 32px;
+  border: 1px solid black;
+  background-color: white;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 60%;
+  justify-content: space-evenly !important;
+}
+
+.spice-level-indicator li {
+  height: 100%;
+}
+
+.spice-level-indicator img {
+  object-fit: contain;
+}
+
+h3 {
+  font: 26px 'Bangers';
+  text-transform: uppercase;
+  margin-top: 30px;
+  width: 70%;
+  text-align: left;
+}
+
+.products-list p {
+  font: 22px 'Rubik';
+  width: 70%;
+  text-align: left;
+}
+
+.products-list p > span {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 980px) {
+  .filters {
+    height: 128px;
+  }
+}

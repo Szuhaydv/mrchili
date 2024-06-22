@@ -1,0 +1,97 @@
+footer {
+  height: 40vh;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  box-shadow: 0px -2px 26px rgba(0, 0, 0, 0.1);
+}
+
+.brand-info {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  gap: 3rem;
+}
+
+.brand-info h2 {
+  font: 54px "Alfa Slab One"
+}
+
+.brand-info img:first-child {
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+.brand-info svg {
+  width: 4rem;
+  height: 4rem;
+  fill: #b5b5b5 !important;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  width: max-content;
+  margin: auto;
+  font: clamp(1.75rem, 1.416rem + 0.695vw, 2.25rem) "Bitter";
+  gap: 3rem;
+}
+
+a {
+  color: #989898;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.copyright-notice {
+  height: 4rem;
+  width: 100vw;
+  background-color: #E9E9E9;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.copyright-notice p {
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  a {
+    font-size: clamp(1.25rem, 0.893rem + 1.786vw, 1.75rem);
+  }
+
+  nav ul {
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  .brand-info {
+    gap: clamp(1rem, -0.429rem + 7.143vw, 3rem);
+  }
+
+  .brand-info h2 {
+    font-size: clamp(2.25rem, 1.446rem + 4.018vw, 3.375rem);
+  }
+
+  .brand-info img:first-child {
+    width: clamp(4rem, 1.946rem + 10.268vw, 6.875rem);
+    height: clamp(4rem, 1.946rem + 10.268vw, 6.875rem);
+  }
+
+  .brand-info svg {
+    width: clamp(2.5rem, 1.429rem + 5.357vw, 4rem);
+    height: clamp(2.5rem, 1.429rem + 5.357vw, 4rem);
+  }
+}

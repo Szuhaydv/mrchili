@@ -1,1 +1,99 @@
-<p>products works!</p>
+<main>
+  <section class="intro">
+    <div>
+      <h1>Termékeink</h1>
+      <p>Esetleg rövid szöveg hogy miket forgalmaztok, termelés módjáról, helyéről / hasonló</p>
+    </div>
+    <img src="../../assets/sauce collection.png" alt="A collection of Mr. Chili products">
+  </section>
+  <section class="products">
+    <section class="filters">
+      <ul>
+        <li (click)="toggleSpiceLevel()">
+          Erősség
+          <svg [style.transform]="showSpiceLevel ? 'rotate(180deg)' : 'rotate(0)'" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L12 15L18 9" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <ul (click)="nothing($event)" (mouseleave)="toggleSpiceLevel()" class="spice-levels" [style.display]="showSpiceLevel ? 'block' : 'none'">
+            @for (level of spiceLevels; track level.id) {
+              <li>
+                <button (click)="selectSpiceLevel(level.id, $event)" [style.backgroundImage]="level.isChecked ? 'url(../../assets/checkmark.svg)' : 'none'" [style.backgroundColor]="level.isChecked ? '#2196F3' : '#eee'"></button>
+                @for (num of [].constructor(level.id); track num) {
+                  <img class="colored" src="../../assets/fire-colored.svg" alt="">
+                }
+                @for (num of [].constructor(spiceLevels.length - level.id - 1); track num) {
+                  <img src="../../assets/fire-monotone.svg" alt="">
+                }
+              </li>
+            }
+          </ul>
+        </li>
+        <li class="selected">
+          Szószok
+          <img src="../../assets/x icon.svg" alt="X close icon">
+        </li>
+        <li>Őrlemények</li>
+        <li>Paprikák</li>
+      </ul>
+    </section>
+    <section class="products-list">
+      <section>
+        <h2>Szószok</h2>
+        <ul>
+          @for (product of productList; track product) {
+            <li>
+              <div class="image-container">
+                <img src="../../assets/sauce 2.png" alt="">
+                <ul class="spice-level-indicator">
+                  <li><img src="../assets/fire-colored.svg" alt=""></li>
+                  <li><img src="../assets/fire-monotone.svg" alt=""></li>
+                  <li><img src="../assets/fire-monotone.svg" alt=""></li>
+                </ul>
+              </div>
+              <h3>Reaper Szósz</h3>
+              <p>2499 <span>Ft</span></p>
+            </li>
+          }
+        </ul>
+      </section>
+      <section>
+        <h2>Őrlemények</h2>
+        <ul>
+          @for (product of productList; track product) {
+            <li>
+              <div class="image-container">
+                <img src="../../assets/sauce 2.png" alt="">
+                <ul class="spice-level-indicator">
+                  <li><img src="../assets/fire-colored.svg" alt=""></li>
+                  <li><img src="../assets/fire-monotone.svg" alt=""></li>
+                  <li><img src="../assets/fire-monotone.svg" alt=""></li>
+                </ul>
+              </div>
+              <h3>Reaper Szósz</h3>
+              <p>2499 <span>Ft</span></p>
+            </li>
+          }
+        </ul>
+      </section>
+      <section>
+        <h2>Paprikák</h2>
+        <ul>
+          @for (product of productList; track product) {
+            <li>
+              <div class="image-container">
+                <img src="../../assets/sauce 2.png" alt="">
+                <ul class="spice-level-indicator">
+                  <li><img src="../assets/fire-colored.svg" alt=""></li>
+                  <li><img src="../assets/fire-monotone.svg" alt=""></li>
+                  <li><img src="../assets/fire-monotone.svg" alt=""></li>
+                </ul>
+              </div>
+              <h3>Reaper Szósz</h3>
+              <p>2499 <span>Ft</span></p>
+            </li>
+          }
+        </ul>
+      </section>
+    </section>
+  </section>
+</main>

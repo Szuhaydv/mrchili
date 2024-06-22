@@ -13,9 +13,8 @@ main {
   padding: 64px 0;
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 20px;
-  background-color: black;
+  row-gap: 8px;
+  column-gap: 8px;
 }
 
 .images img {
@@ -44,7 +43,7 @@ main {
 
 .about-info {
   width: 70%;
-  padding: 64px 0;
+  margin: 64px 0;
 }
 
 h1 {
@@ -56,7 +55,7 @@ h1 {
 .text-container {
   width: 75%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  font: 24px 'Bitter';
+  font: 22px 'Bitter';
   line-height: 160%;
   padding: 32px;
   border-radius: 0 16px 16px 0;

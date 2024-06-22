@@ -85,11 +85,15 @@ h1 {
   overflow: hidden;
 }
 
-.filters > ul > li:first-child {
+.filters > ul > li:first-child, .filters > ul > li:last-child {
   position: relative
 }
 
-.spice-levels {
+.filters > ul > li:last-child {
+  display: none;
+}
+
+.spice-levels, .product-types {
   position: absolute;
   z-index: 100;
   width: 100%;
@@ -104,15 +108,28 @@ h1 {
   cursor: default
 }
 
-.spice-levels li {
-  width: 100%;
+.product-types {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  left: auto;
+  right: 0 !important;
+}
+
+.spice-levels li, .product-types li {
   padding: 8px 4px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.spice-levels li button {
+.product-types li {
+  width: max-content;
+  gap: 0.5rem
+}
+
+
+.spice-levels li button, .product-types li button {
   width: 20px;
   height: 20px;
   border-radius: 4px;
@@ -169,7 +186,6 @@ h2 {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  justify-self: flex-start !important;
 }
 
 .products-list section > ul > li:hover {
@@ -237,4 +253,47 @@ h3 {
   .filters {
     height: 128px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro div {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    width: 100%;
+    font-size: clamp(2rem, 1.464rem + 2.679vw, 2.75rem);
+  }
+
+  main {
+    padding: 80px clamp(1.25rem, -3.571rem + 24.107vw, 8rem) 80px clamp(1.25rem, -3.571rem + 24.107vw, 8rem);
+  }
+
+  .filters > ul > li:last-child {
+    display: block;
+  }
+
+  .filters > ul > li:nth-child(2), .filters > ul > li:nth-child(3), .filters > ul > li:nth-child(4) {
+    display: none;
+  }
+
+  .filters > ul {
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+  }
+
+  .filters {
+    height: 64px;
+    padding: 0;
+  }
+
+
 }

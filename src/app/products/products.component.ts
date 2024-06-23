@@ -27,6 +27,8 @@ export class ProductsComponent {
 
   productList = [1,1,1,1]
 
+  noneSelected = true
+
   toggleSpiceLevel() {
     this.showSpiceLevel = !this.showSpiceLevel
   }
@@ -43,6 +45,17 @@ export class ProductsComponent {
   selectProductType(id: number, event: Event) {
     event.stopPropagation()
     this.productTypes[id].isChecked = !this.productTypes[id].isChecked
+    this.checkIfShowingAll()
+  }
+
+  checkIfShowingAll() {
+    for (const product of this.productTypes) {
+      if (product.isChecked) {
+        this.noneSelected = false
+        return
+      }
+    }
+    this.noneSelected = true
   }
 
   nothing(event: Event) {

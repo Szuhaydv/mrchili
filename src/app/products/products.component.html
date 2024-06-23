@@ -28,12 +28,18 @@
             }
           </ul>
         </li>
-        <li class="selected">
+        <li (click)="selectProductType(0, $event)" [class.selected]="this.productTypes[0].isChecked">
           Szószok
-          <img src="../../assets/x icon.svg" alt="X close icon">
+          <img [style.display]="this.productTypes[0].isChecked ? 'block' : 'none'" src="../../assets/x icon.svg" alt="X close icon">
         </li>
-        <li>Őrlemények</li>
-        <li>Paprikák</li>
+        <li (click)="selectProductType(1, $event)" [class.selected]="this.productTypes[1].isChecked">
+          Őrlemények
+          <img [style.display]="this.productTypes[1].isChecked ? 'block' : 'none'" src="../../assets/x icon.svg" alt="X close icon">
+        </li>
+        <li (click)="selectProductType(2, $event)" [class.selected]="this.productTypes[2].isChecked">
+          Paprikák
+          <img [style.display]="this.productTypes[2].isChecked ? 'block' : 'none'" src="../../assets/x icon.svg" alt="X close icon">
+        </li>
         <li (click)="toggleProductTypes()">
           Típus
           <svg [style.transform]="showProductTypes ? 'rotate(180deg)' : 'rotate(0)'" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +57,7 @@
       </ul>
     </section>
     <section class="products-list">
-      <section>
+      <section [style.display]="this.productTypes[0].isChecked || noneSelected ? 'block' : 'none'">
         <h2>Szószok</h2>
         <ul>
           @for (product of productList; track product) {
@@ -70,7 +76,7 @@
           }
         </ul>
       </section>
-      <section>
+      <section [style.display]="this.productTypes[1].isChecked || noneSelected ? 'block' : 'none'">
         <h2>Őrlemények</h2>
         <ul>
           @for (product of productList; track product) {
@@ -89,7 +95,7 @@
           }
         </ul>
       </section>
-      <section>
+      <section [style.display]="this.productTypes[2].isChecked || noneSelected ? 'block' : 'none'">
         <h2>Paprikák</h2>
         <ul>
           @for (product of productList; track product) {

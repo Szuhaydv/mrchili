@@ -13,19 +13,19 @@
     <h1>Történetünk</h1>
     <section class="text-section">
       <div class="text-container">
-        <p>Mr. Chili egy 2024-ben alapult... Lorem ipsum dolor sit amet consectetur.</p>
-        <p>Lorem ipsum dolor sit amet consectetur. Amet sed sed est diam. Sapien vitae dolor ut sit pellentesque nunc at velit. Vitae semper nisl nunc ultrices elementum feugiat in magna. </p>
+        <p>{{currentText[0]}}</p>
+        <p>{{currentText[1]}}</p>
       </div>
       <ul>
-        <li>
+        <li (click)="updateText(0)" [class.selected]="currentTextNo == 0">
           <div></div>
           2018
         </li>
-        <li class="selected">
+        <li (click)="updateText(1)" [class.selected]="currentTextNo == 1">
           <div></div>
           2020
         </li>
-        <li>
+        <li (click)="updateText(2)" [class.selected]="currentTextNo == 2">
           <div></div>
           2024
         </li>

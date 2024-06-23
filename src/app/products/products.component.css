@@ -221,6 +221,7 @@ h2 {
   transform: translate(-50%, 50%);
   width: 60%;
   justify-content: space-evenly !important;
+  flex-wrap: nowrap !important;
 }
 
 .spice-level-indicator li {
